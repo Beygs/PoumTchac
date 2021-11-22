@@ -1,0 +1,5 @@
+<div data-key=<%= key %> class='key'>
+  <kbd><%= key %></kbd>
+  <span class='sound'><%= sound %></span>
+</div>
+<%= audio_tag("#{sound}.wav", 'data-key': key, preload: 'auto' ) %>

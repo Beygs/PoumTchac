@@ -1,0 +1,7 @@
+<h1>Poum poum tchac</h1>
+
+<div class='keys'>
+  <% @key_sound_map.each do |k| %>
+    <%= render partial: 'key', locals: { key: k[0], sound: k[1] } %>
+  <% end %>
+</div>

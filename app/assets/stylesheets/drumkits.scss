@@ -1,0 +1,61 @@
+// Place all the styles related to the drumkits controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+}
+
+.keys {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 5rem;
+
+  .key {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    padding: 1em;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    width: 20%;
+    transform: scale(1);
+
+    kbd {
+      text-transform: uppercase;
+    }
+  }
+
+  @for $i from 1 to 18 {
+    .key:nth-child(#{$i}) {
+      $color: hsl($i * 20, 50%, 50%);
+      background-color: $color;
+      border: 5px solid $color;
+
+      &.active {
+        background-color: transparent;
+        color: $color;
+        transform: scale(1.1);
+      }
+    }
+  }
+}
